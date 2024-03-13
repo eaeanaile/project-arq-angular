@@ -1,0 +1,23 @@
+<table class="tabla">
+    <tr>
+        <th class="tabla__title">Logo</th>
+        <th class="tabla__title">Nombre del producto</th>
+        <th class="tabla__title">Descripción
+            <img src="src/assets/info-circle-svgrepo-com.svg"  alt="">
+        </th>
+        <th class="tabla__title">Fecha de liberación
+            <img src="src/assets/info-circle-svgrepo-com.svg"  alt="">
+        </th>
+        <th class="tabla__title">Fecha de reestructuración
+            <img src="src/assets/info-circle-svgrepo-com.svg"  alt="">
+        </th>
+    </tr>
+
+    <tr *ngFor="let product of products">
+        <td class="tabla__text">{{product.logo}}</td>
+        <td class="tabla__text">{{product.name}}</td>
+        <td class="tabla__text">{{product.description}}</td>
+        <td class="tabla__text">{{product.date_release}}</td>
+        <td class="tabla__text">{{product.date_revision}}</td>
+    </tr>
+</table>

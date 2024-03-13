@@ -1,0 +1,6 @@
+<div class="pagination">
+    <p>{{ mostrarResultados }}</p>
+    <select class="pagination__selection" [(ngModel)]="actualizarResultados" (ngModelChange)="optionResultsChanged($event)">
+        <option class="pagination__options" *ngFor="let option of resultadosOption" [value]="option">{{ option }}</option>
+    </select>
+</div>

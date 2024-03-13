@@ -1,0 +1,12 @@
+.product{
+    display: flex;
+    flex-direction: column;
+
+    &__divider {
+        border: 1px solid #e7e9ee;
+    }
+
+    &__card {
+        margin: 10px 60px 0px 60px;
+    }
+}
