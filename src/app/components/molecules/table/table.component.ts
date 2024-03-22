@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../interfaces/products.interface';
 import { ProductsService } from '../../../services/products.service';
 
