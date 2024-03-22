@@ -1,12 +1,11 @@
 .product{
     display: flex;
     flex-direction: column;
-
-    &__divider {
-        border: 1px solid #e7e9ee;
-    }
+    background-color: #f2f9f9;
 
     &__card {
         margin: 10px 60px 0px 60px;
+        margin-bottom: 25px;
     }
+
 }

@@ -1,9 +1,6 @@
+<app-header></app-header>
 <div class="product">
-    <app-header></app-header>
-    <div class="product__divider"></div>
     <div class="product__card">
-        <app-search (ngModel)="searchTerm" (input)="searchProducts()"></app-search>
-        <app-table [products]="filteredProducts"></app-table>
-        <app-pagination [totalResults]="totalResultsList" [resultadosOption]="resultadosOptionList" [actualizarResultados]="actualizarResultadosList" (actualizarResultadosChange)="actualizarResultadosList = $event"></app-pagination>
+        <app-table [productsFiltereds]="listProductsFiltereds"></app-table>
     </div>
 </div>
