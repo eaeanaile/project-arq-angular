@@ -13,8 +13,9 @@ export class ProductsService {
   ) { }
 
   getDataProducts(): Observable<Product[]> {
-    const headers = new HttpHeaders().set('authorId', '100');
-    return this.http.get<Product[]>('https://tribu-ti-staffing-desarrolloafangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros', {headers})
+    const headers = new HttpHeaders().set("authorId", "1000");
+    console.log('holaa allison, aqui estan los productos')
+    return this.http.get<Product[]>("https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products", {headers})
   }
 
 }

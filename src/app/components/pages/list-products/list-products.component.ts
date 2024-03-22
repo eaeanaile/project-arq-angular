@@ -7,31 +7,9 @@ import { ProductsService } from '../../../services/products.service';
   templateUrl: './list-products.component.html',
   styleUrl: './list-products.component.scss'
 })
-export class ListProductsComponent implements OnInit{
+export class ListProductsComponent {
 
-  @Input() buscarProducts: Product[] = [];
-  searchTerm: string = '';
-  filteredProducts: Product[] = [];
 
-  totalResultsList: number = 0;
-  resultadosOptionList: number[] = [5, 10, 20];
-  actualizarResultadosList: number = 5;
-
-  constructor(
-    private productsService: ProductsService
-  ) {}
-
-  ngOnInit(): void {
-    this.searchProducts();
-  }
-
-  searchProducts() {
-    this.productsService.getDataProducts().subscribe(products => {
-      this.buscarProducts = products;
-      this.filteredProducts = this.buscarProducts.filter(product =>
-        product.name.includes(this.searchTerm)
-      );
-    });
-  }
+  listProductsFiltereds: Product[] = [];
 
 }

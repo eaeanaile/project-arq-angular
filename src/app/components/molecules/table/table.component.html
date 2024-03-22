@@ -1,23 +1,46 @@
-<table class="tabla">
-    <tr>
-        <th class="tabla__title">Logo</th>
-        <th class="tabla__title">Nombre del producto</th>
-        <th class="tabla__title">Descripción
-            <img src="src/assets/info-circle-svgrepo-com.svg"  alt="">
-        </th>
-        <th class="tabla__title">Fecha de liberación
-            <img src="src/assets/info-circle-svgrepo-com.svg"  alt="">
-        </th>
-        <th class="tabla__title">Fecha de reestructuración
-            <img src="src/assets/info-circle-svgrepo-com.svg"  alt="">
-        </th>
-    </tr>
 
-    <tr *ngFor="let product of products">
-        <td class="tabla__text">{{product.logo}}</td>
-        <td class="tabla__text">{{product.name}}</td>
-        <td class="tabla__text">{{product.description}}</td>
-        <td class="tabla__text">{{product.date_release}}</td>
-        <td class="tabla__text">{{product.date_revision}}</td>
-    </tr>
-</table>
+<div class="tabla">
+    <div class="search">
+        <div class="search__input">
+            <input type="text" class="search__buscador" placeholder="Search..." [(ngModel)]="searchName" (ngModelChange)="searchProducts()">
+        </div>
+    </div>
+    <table class="tabla__tbl">
+            <thead>
+                <tr>
+                    <th class="tabla__title">Logo</th>
+                    <th class="tabla__title">Nombre del producto</th>
+                    <th class="tabla__title">Descripción
+                        <img class="tabla__icon" src="../../../../assets/info-circle-svgrepo-com.svg"  alt="icon info">
+                    </th>
+                    <th class="tabla__title">Fecha de liberación
+                        <img class="tabla__icon" src="../../../../assets/info-circle-svgrepo-com.svg"  alt="icon info">
+                    </th>
+                    <th class="tabla__title">Fecha de reestructuración
+                        <img class="tabla__icon" src="../../../../assets/info-circle-svgrepo-com.svg"  alt="icon info">
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let product of filteredProductsList">
+                <tr>
+                    <td class="tabla__text">
+                        <img
+                        [src]="product.logo"
+                        alt="Imagen del producto"
+                        width="50"
+                      />
+                    </td>
+                    <td class="tabla__text">{{product.name}}</td>
+                    <td class="tabla__text">{{product.description}}</td>
+                    <td class="tabla__text">{{formatDate(product.date_release)}}</td>
+                    <td class="tabla__text">{{formatDate(product.date_revision)}}</td>
+                </tr>
+            </tbody>
+    </table>
+    <div class="pagination">
+        <p class="pagination__text">{{ productsFiltereds?.length }} Resultados</p>
+        <select class="pagination__selection" [(ngModel)]="selectedResultOption">
+            <option class="pagination__options" *ngFor="let option of resultadsOption" [value]="option">{{ option }}</option>
+        </select>
+    </div>
+</div>
